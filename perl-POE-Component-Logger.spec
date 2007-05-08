@@ -1,6 +1,6 @@
 %define module  POE-Component-Logger
 %define version 1.00
-%define release %mkrel 4
+%define release %mkrel 5
 %define	pdir	POE
 
 
