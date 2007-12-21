@@ -13,6 +13,7 @@ Group: 		Development/Perl
 Source0: 	ftp://ftp.perl.org/pub/CPAN/modules/by-module/POE/%{module}-%{version}.tar.bz2
 Url:            http://search.cpan.org/dist/%{module}
 BuildArch: 	noarch
+BuildRoot: 	%{_tmppath}/%{name}-buildroot
 Requires: 	perl-POE >= 0.11
 Requires:       perl-Log-Dispatch-Config >= 0.10
 BuildRequires:	perl-devel
