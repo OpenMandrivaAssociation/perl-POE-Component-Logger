@@ -1,32 +1,31 @@
-%define module  POE-Component-Logger
-%define version 1.00
-%define release %mkrel 8
-%define	pdir	POE
+%define upstream_name    POE-Component-Logger
+%define upstream_version 1.00
 
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Summary: 	%{module} module for perl
-Name: 		perl-%{module}
-Version: 	%{version}
-Release: 	%{release}
-License: 	GPL or Artistic
+Summary: 	%{upstream_name} module for perl
+License: 	GPL+ or Artistic
 Group: 		Development/Perl
-Source0: 	ftp://ftp.perl.org/pub/CPAN/modules/by-module/POE/%{module}-%{version}.tar.bz2
-Url:            http://search.cpan.org/dist/%{module}
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0: 	ftp://ftp.perl.org/pub/CPAN/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildRequires:  perl-Log-Dispatch-Config >= 0.100.0
+BuildRequires:  perl-POE >= 0.110.0
 BuildArch: 	noarch
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
+
 Requires: 	perl-POE >= 0.11
-Requires:       perl-Log-Dispatch-Config >= 0.10
-BuildRequires:	perl-devel
-BuildRequires:  perl-POE >= 0.11
-BuildRequires:  perl-Log-Dispatch-Config >= 0.10
+Requires:   perl-Log-Dispatch-Config >= 0.10
 
 %description 
-%{module} module for perl.  A highly flexible logger component
+%{upstream_name} module for perl.  A highly flexible logger component
 for POE that uses Log::Dispatch and Log::Dispatch::Config for
 ultimate flexibility and power.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 
@@ -46,4 +45,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %_mandir/*/*
 %{perl_vendorlib}/POE/Component
-
