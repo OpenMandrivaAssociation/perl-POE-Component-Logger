@@ -1,15 +1,15 @@
 %define upstream_name    POE-Component-Logger
-%define upstream_version 1.00
+%define upstream_version 1.10
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary: 	%{upstream_name} module for perl
 License: 	GPL+ or Artistic
 Group: 		Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0: 	ftp://ftp.perl.org/pub/CPAN/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0: 	ftp://ftp.perl.org/pub/CPAN/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:  perl-Log-Dispatch-Config >= 0.100.0
 BuildRequires:  perl-POE >= 0.110.0
