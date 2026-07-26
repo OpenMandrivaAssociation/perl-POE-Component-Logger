@@ -1,15 +1,13 @@
 %define upstream_name    POE-Component-Logger
-%define upstream_version 1.10
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	1.10
+Release:	6
 
 Summary:	%{upstream_name} module for perl
 License:	GPL+ or Artistic
 Group: 		Development/Perl
 Url:        http://github.com/dolmen/POE-Component-Logger
-Source0:	https://cpan.metacpan.org/authors/id/D/DO/DOLMEN/POE-Component-Logger-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/D/DO/DOLMEN/POE-Component-Logger-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -26,7 +24,7 @@ for POE that uses Log::Dispatch and Log::Dispatch::Config for
 ultimate flexibility and power.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor PREFIX=%{_prefix} 
@@ -53,9 +51,7 @@ make PREFIX="%{buildroot}%{_prefix}" install
 - rebuild
 
   + JÃ©rÃ´me Quelin <jquelin@mandriva.org>
-    - rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 1.00-8mdv2009.0
+    - rebuild using %1.10 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 1.00-8mdv2009.0
 + Revision: 258272
 - rebuild
 
